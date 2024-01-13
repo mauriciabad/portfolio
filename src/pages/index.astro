@@ -10,7 +10,14 @@ const allProjects = await getCollection("projects")
   {
     allProjects.map((project) => (
       <div>
-        <p>{project.data.title}</p>
+        <p>
+          <img
+            src={`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${project.data.url}&size=32`}
+            alt=""
+            class="inline-block h-4 w-4"
+          />
+          <span>{project.data.title}</span>
+        </p>
       </div>
     ))
   }
