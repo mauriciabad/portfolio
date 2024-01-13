@@ -1,9 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import MainLayout from "../layouts/MainLayout.astro"
+import { getCollection } from "astro:content"
+
+const allProjects = await getCollection("projects")
+console.log(allProjects)
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Hello</h1>
-  </main>
-</Layout>
+<MainLayout title="Welcome to Astro.">
+  <h1 class="text-4xl">Hello</h1>
+  {
+    allProjects.map((project) => (
+      <div>
+        <p>{project.data.title}</p>
+      </div>
+    ))
+  }
+</MainLayout>
