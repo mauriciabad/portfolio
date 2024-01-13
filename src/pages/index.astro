@@ -3,7 +3,6 @@ import MainLayout from "../layouts/MainLayout.astro"
 import { getCollection } from "astro:content"
 
 const allProjects = await getCollection("projects")
-console.log(allProjects)
 ---
 
 <MainLayout title="Welcome to Astro.">
