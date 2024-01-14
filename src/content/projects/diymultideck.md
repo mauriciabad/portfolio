@@ -5,5 +5,6 @@ name: The DIY Multideck
 shortName: DIY Multideck
 addShortcut: true
 url: https://diymultideck.mauri.app
+sourceCode: https://github.com/mauriciabad/diy-multideck-website
 maskableIcon: /apps/diymultideck/maskable-icon.png
 ---

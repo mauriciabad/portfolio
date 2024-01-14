@@ -5,5 +5,6 @@ name: Divelog
 shortName: Divelog
 addShortcut: true
 url: https://divelog.vercel.app
+sourceCode: https://github.com/mauriciabad/dive-log
 maskableIcon: /apps/divelog/maskable-icon.png
 ---

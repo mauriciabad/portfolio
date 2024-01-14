@@ -5,5 +5,9 @@ name: GradeCalc
 shortName: GradeCalc
 addShortcut: true
 url: https://gradecalc.mauri.app
+sourceCode: https://github.com/mauriciabad/GradeCalc
 maskableIcon: /apps/gradecalc/maskable-icon.png
 ---
+
+TFG document: <https://upcommons.upc.edu/handle/2117/336018>
+TFG code: <https://github.com/mauriciabad/tfg-informatica>

@@ -4,13 +4,15 @@ import DivMaxWidth from "../layouts/DivMaxWidth.astro"
 import Layout from "../layouts/Layout.astro"
 import { getCollection } from "astro:content"
 
-const allProjects = await getCollection("projects")
+const mainProjects = await getCollection("projects", ({ data }) => {
+  return data.addShortcut === true
+})
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="p-4">
     <DivMaxWidth class="mt-0 sm:mt-8 md:mt-12 lg:mt-24">
-      <QuickAccess projects={allProjects} />
+      <QuickAccess projects={mainProjects} />
     </DivMaxWidth>
   </main>
 </Layout>

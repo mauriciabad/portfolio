@@ -5,5 +5,6 @@ name: Werewolf
 shortName: Werewolf
 addShortcut: true
 url: https://wolf.mauri.app
+sourceCode: https://github.com/mauriciabad/werewolf-assistant
 maskableIcon: /apps/werewolf/maskable-icon.png
 ---

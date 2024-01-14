@@ -5,5 +5,6 @@ name: Begur Secret
 shortName: Begur Secret
 addShortcut: true
 url: https://descobreixbegur.vercel.app
-maskableIcon: /apps/begursecret/maskable-icon.png
+sourceCode: https://github.com/mauriciabad/descobreix-begur-app
+maskableIcon: /apps/begur-secret/maskable-icon.png
 ---

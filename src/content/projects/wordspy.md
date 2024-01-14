@@ -4,6 +4,6 @@ description: Word Spy game's app. Eliminate the spies and don't let them find ou
 name: Word Spy Game
 shortName: Word Spy
 addShortcut: true
-url: https://wordspy.mauri.app
+url: https://github.com/mauriciabad/wordspy
 maskableIcon: /apps/wordspy/maskable-icon.png
 ---
