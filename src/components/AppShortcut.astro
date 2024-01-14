@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string
+  icon: string
+  url: string
+}
+
+const { url, title, icon } = Astro.props
+---
+
+<li>
+  <a href={url}>
+    <img src={icon} alt="" class="inline-block h-4 w-4" />
+    <span class="underline">{title}</span>
+  </a>
+</li>
