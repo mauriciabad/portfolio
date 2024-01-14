@@ -5,4 +5,5 @@ name: GradeCalc
 shortName: GradeCalc
 addShortcut: true
 url: https://gradecalc.mauri.app
+maskableIcon: /apps/gradecalc/maskable_icon.png
 ---

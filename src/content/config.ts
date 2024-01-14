@@ -9,6 +9,7 @@ const projectsCollection = defineCollection({
     url: z.string(),
     name: z.string(),
     shortName: z.string(),
+    maskableIcon: z.string(),
 
     addShortcut: z.boolean(),
   }),

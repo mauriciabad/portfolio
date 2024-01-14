@@ -8,9 +8,13 @@ interface Props {
 const { url, title, icon } = Astro.props
 ---
 
-<li>
-  <a href={url}>
-    <img src={icon} alt="" class="inline-block h-4 w-4" />
-    <span class="underline">{title}</span>
+<li class="group">
+  <a href={url} class="flex flex-col items-center justify-center gap-4 p-4">
+    <img
+      src={icon}
+      alt=""
+      class="block h-24 w-24 rounded-full border border-stone-400 shadow-lg transition-transform duration-100 group-hover:scale-110"
+    />
+    <span class="text-lg font-bold">{title}</span>
   </a>
 </li>
