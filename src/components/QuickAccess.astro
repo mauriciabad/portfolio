@@ -13,18 +13,26 @@ const { projects } = Astro.props
   class="font-title mb-2 text-center text-3xl uppercase leading-none tracking-wide"
 >
   <span class="flex items-center justify-center gap-2">
-    <span class="select-none text-gray-500" aria-hidden="true">~</span>
+    <span
+      class="select-none text-gray-500 [@media(width<=310px)]:hidden"
+      aria-hidden="true">~</span
+    >
     <span>Quick acces</span>
-    <span class="select-none text-gray-500" aria-hidden="true">~</span>
+    <span
+      class="select-none text-gray-500 [@media(width<=310px)]:hidden"
+      aria-hidden="true">~</span
+    >
   </span>
   <span class="block text-base font-semibold text-gray-500">to my apps</span>
 </h2>
-<ul class="flex flex-wrap justify-center gap-4 [&>*]:max-w-64 [&>*]:flex-1">
+<ul
+  class="flex flex-wrap justify-center gap-4 [&>*]:min-w-48 [&>*]:max-w-64 [&>*]:flex-1"
+>
   {
     projects.map((project) => (
       <AppShortcut
         icon={project.data.maskableIcon}
-        title={project.data.name}
+        title={project.data.shortName}
         url={project.data.url}
       />
     ))
