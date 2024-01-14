@@ -1,5 +1,5 @@
 ---
-import AppShortcut from "../components/AppShortcut.astro"
+import QuickAccess from "../components/QuickAccess.astro"
 import MainLayout from "../layouts/MainLayout.astro"
 import { getCollection } from "astro:content"
 
@@ -7,17 +7,5 @@ const allProjects = await getCollection("projects")
 ---
 
 <MainLayout title="Welcome to Astro.">
-  <h1 class="text-4xl">Hello</h1>
-
-  <ul class="flex flex-wrap justify-center">
-    {
-      allProjects.map((project) => (
-        <AppShortcut
-          icon={project.data.maskableIcon}
-          title={project.data.name}
-          url={project.data.url}
-        />
-      ))
-    }
-  </ul>
+  <QuickAccess projects={allProjects} />
 </MainLayout>
