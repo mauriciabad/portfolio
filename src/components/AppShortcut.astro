@@ -3,7 +3,7 @@ import { IconExternalLink } from "@tabler/icons-react"
 
 interface Props {
   title: string
-  icon: string
+  icon?: string
   url: string
 }
 
@@ -18,11 +18,17 @@ const { url, title, icon } = Astro.props
     <IconExternalLink
       className="absolute right-3 top-3 text-gray-600 duration-300 group-hover:text-gray-300 group-hover:duration-0"
     />
-    <img
-      src={icon}
-      alt=""
-      class="z-0 block aspect-square w-20 rounded-full border border-gray-900 group-hover:border-gray-800"
-    />
+    {
+      icon ? (
+        <img
+          src={icon}
+          alt=""
+          class="z-0 block aspect-square w-20 rounded-full border border-gray-900 bg-white group-hover:border-gray-800"
+        />
+      ) : (
+        <div class="z-0 block aspect-square w-20 rounded-full border border-gray-900 bg-white group-hover:border-gray-800" />
+      )
+    }
     <div class="flex grow flex-col items-center justify-center text-center">
       <span class="text-lg leading-tight tracking-wider">{title}</span>
     </div>

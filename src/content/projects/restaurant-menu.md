@@ -6,5 +6,4 @@ shortName: Restaurant menu
 addShortcut: false
 url: https://lacuina-carta.netlify.app/en/
 sourceCode: https://github.com/mauriciabad/digital-menu-lacuina
-maskableIcon: /apps/restaurant-menu/maskable-icon.png
 ---
