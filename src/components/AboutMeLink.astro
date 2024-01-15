@@ -1,9 +1,13 @@
 ---
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react"
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react"
 
 interface Props {
   title: string
-  icon: "github" | "linkedin"
+  icon: "github" | "linkedin" | "email"
   url: string
 }
 
@@ -13,15 +17,17 @@ const { url, title, icon } = Astro.props
 <li>
   <a
     href={url}
-    class="group relative flex h-full flex-col flex-wrap items-center justify-center rounded-xl bg-gray-800 p-2 shadow-gray-100 transition-colors duration-300 hover:bg-gray-700 hover:shadow-xl hover:duration-0"
+    class="group relative flex h-full w-24 flex-col flex-wrap items-center justify-center gap-0.5 rounded-xl bg-gray-800 p-2 shadow-gray-100 transition-colors duration-300 hover:bg-gray-700 hover:shadow-xl hover:duration-0"
   >
     {
       icon === "github" ? (
-        <IconBrandGithub className="w-32" stroke={1} size={48} />
-      ) : (
-        <IconBrandLinkedin className="w-32" stroke={1} size={48} />
-      )
+        <IconBrandGithub stroke={1} size={48} />
+      ) : icon === "linkedin" ? (
+        <IconBrandLinkedin stroke={1} size={48} />
+      ) : icon === "email" ? (
+        <IconMail stroke={1} size={48} />
+      ) : null
     }
-    <span class="text-lg leading-tight tracking-wider">{title}</span>
+    <span class="leading-tight tracking-wider">{title}</span>
   </a>
 </li>
