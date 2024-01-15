@@ -6,4 +6,5 @@ shortName: Webpack plugin
 addShortcut: false
 url: https://www.npmjs.com/package/next-gen-images-webpack-plugin
 sourceCode: https://github.com/mauriciabad/next-gen-images-webpack-plugin
+maskableIcon: /apps/jxl-webpack/maskable-icon.png
 ---

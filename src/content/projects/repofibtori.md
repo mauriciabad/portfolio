@@ -6,4 +6,5 @@ shortName: RepoFIBtori
 addShortcut: false
 url: https://repofibtori.github.io/RepoFIBtori/
 sourceCode: https://github.com/RepoFIBtori
+maskableIcon: /apps/repofibtori/maskable-icon.png
 ---

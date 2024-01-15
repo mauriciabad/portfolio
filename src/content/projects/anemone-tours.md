@@ -6,6 +6,7 @@ shortName: Anemone Tours
 addShortcut: false
 url: https://snorkel.mauri.app/
 sourceCode: https://github.com/mauriciabad/anemonetours-website
+maskableIcon: /apps/anemone-tours/maskable-icon.png
 ---
 
 Instagram: <https://www.instagram.com/anemonetours>

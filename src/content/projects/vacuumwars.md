@@ -6,4 +6,5 @@ shortName: Vacuum Wars
 addShortcut: false
 url: https://devpost.com/software/vacuumwars
 sourceCode: https://github.com/mauriciabad/VacuumWars
+maskableIcon: /apps/vacuumwars/maskable-icon.png
 ---

@@ -6,4 +6,5 @@ shortName: Langton's Ant 3D
 addShortcut: false
 url: https://mauriciabad.github.io/Langton_Ant_3D
 sourceCode: https://github.com/mauriciabad/Langton_Ant_3D
+maskableIcon: /apps/langton-ant-3D/maskable-icon.png
 ---
