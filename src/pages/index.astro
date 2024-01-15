@@ -9,7 +9,9 @@ const mainProjects = await getCollection("projects", ({ data }) => {
 })
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="Portfolio | Maurici Abad Gutierrez | Web developer & UI/UX designer"
+>
   <main class="p-4">
     <DivMaxWidth class="mt-0 sm:mt-8 md:mt-12 lg:mt-24">
       <QuickAccess projects={mainProjects} />
