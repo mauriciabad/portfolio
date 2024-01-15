@@ -13,8 +13,23 @@ const mainProjects = await getCollection("projects", ({ data }) => {
   title="Portfolio | Maurici Abad Gutierrez | Web developer & UI/UX designer"
 >
   <main class="p-4">
-    <DivMaxWidth class="mt-0 sm:mt-8 md:mt-12 lg:mt-24">
-      <QuickAccess projects={mainProjects} />
+    <DivMaxWidth>
+      <section class="mt-0 sm:mt-8 md:mt-12 lg:mt-24">
+        <QuickAccess projects={mainProjects} />
+      </section>
+
+      <section class="mt-8 sm:mt-16 md:mt-20 lg:mt-24">
+        <h2 class="font-title mb-2 text-3xl uppercase">About me</h2>
+        <p class="@container leading-relaxed md:text-lg">
+          I'm <strong>Maurici Abad</strong>, a well-rounded <strong
+            class="text-yellow-100">Software Engineer</strong
+          >
+          <br class="@md:block hidden" /> with deep technical knowledge in <strong
+            class="text-yellow-100">Frontend</strong
+          >
+          <br class="@md:block hidden" /> who makes people's lives easier and happier.
+        </p>
+      </section>
     </DivMaxWidth>
   </main>
 </Layout>

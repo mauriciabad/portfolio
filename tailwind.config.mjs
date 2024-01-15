@@ -12,11 +12,17 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        xs: "475px",
+      },
       fontFamily: {
         sans: sansFonts,
         title: ["Fraunces Variable", "Fraunces", ...sansFonts],
       },
     },
   },
-  plugins: ["@tailwindcss/typography"],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+  ],
 }
