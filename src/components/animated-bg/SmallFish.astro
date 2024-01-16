@@ -1,0 +1,46 @@
+---
+import { cn } from "../../lib/cn"
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<svg viewBox="0 0 100 40" class={cn("h-4", className)}>
+  <path
+    class="tail"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M30.424 22.9009L30.4237 17.0987C23.2456 7.25347 12.8937 1.62739 2.0849 0.214798C1.39091 0.124122 0.695453 0.0557434 0 0V40C0.696183 39.9435 1.39164 39.8766 2.0849 39.7852C12.8939 38.3726 23.2458 32.7464 30.424 22.9009Z"
+    fill="#F9993A"></path>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M30.4241 22.8798C40.0157 35.9341 55.273 41.5264 69.7154 39.6447V0.354234C67.8984 0.118078 66.074 0 64.2423 0C51.5223 0 38.8085 5.70428 30.4238 17.1187L30.4241 22.8798Z"
+    fill="#F9993A"></path>
+  <path
+    d="M100 19.9995C92.8267 31.5637 81.5448 38.1097 69.7155 39.6447C66.1105 33.9843 64 27.2391 64 19.9995C64 12.7598 66.1105 6.01459 69.7155 0.354233C81.5448 1.88925 92.8267 8.43519 100 19.9995Z"
+    fill="#F9D43A"></path>
+  <path
+    d="M79.1885 26C82.5022 26 85.1885 23.3137 85.1885 20C85.1885 16.6863 82.5022 14 79.1885 14C75.8748 14 73.1885 16.6863 73.1885 20C73.1885 23.3137 75.8748 26 79.1885 26Z"
+    fill="#4D4D4D"></path>
+</svg>
+
+<style>
+  .tail {
+    animation: tail 400ms infinite;
+    transform-origin: right center;
+    @apply animation-ease-in-out-sine;
+  }
+
+  @keyframes tail {
+    0% {
+      transform: rotateY(-30deg);
+    }
+    100% {
+      transform: rotateY(30deg);
+    }
+  }
+</style>

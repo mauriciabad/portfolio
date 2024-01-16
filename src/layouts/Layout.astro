@@ -2,6 +2,7 @@
 import "@fontsource-variable/fraunces"
 import "@fontsource-variable/inter"
 import WaterSurface from "../components/WaterSurface.astro"
+import AnimatedBackground from "../components/animated-bg/AnimatedBackground.astro"
 
 interface Props {
   title: string
@@ -22,6 +23,13 @@ const { title } = Astro.props
   </head>
   <body class="bg-gray-900 text-gray-200">
     <WaterSurface class="pt-4" />
+    <AnimatedBackground />
     <slot />
   </body>
 </html>
+
+<style is:global>
+  svg * {
+    transform-box: fill-box;
+  }
+</style>

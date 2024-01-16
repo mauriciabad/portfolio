@@ -19,10 +19,18 @@ export default {
         sans: sansFonts,
         title: ["Fraunces Variable", "Fraunces", ...sansFonts],
       },
+      colors: {
+        "semi-gray": {
+          700: "#3e495bbf",
+          800: "#212c3bbf",
+        },
+      },
     },
   },
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
+    require("@xpd/tailwind-3dtransforms"),
+    require("tailwindcss-easing"),
   ],
 }
