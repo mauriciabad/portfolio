@@ -13,7 +13,7 @@ const { url, title, icon } = Astro.props
 <li>
   <a
     href={url}
-    class="group relative flex h-full flex-col items-center justify-center gap-2 rounded-xl bg-gray-800 p-4 shadow-gray-100 transition-colors duration-300 hover:bg-gray-700 hover:shadow-xl hover:duration-0"
+    class="group relative flex h-full flex-col items-center justify-center gap-2 rounded-xl bg-gray-800 p-3 shadow-gray-100 transition-colors duration-300 hover:bg-gray-700 hover:shadow-xl hover:duration-0 xs:p-4"
   >
     <IconExternalLink
       className="absolute right-3 top-3 text-gray-600 duration-300 group-hover:text-gray-300 group-hover:duration-0"
@@ -23,14 +23,16 @@ const { url, title, icon } = Astro.props
         <img
           src={icon}
           alt=""
-          class="z-0 block aspect-square w-20 rounded-full border border-gray-900 bg-white group-hover:border-gray-800"
+          class="z-0 block aspect-square w-16 rounded-full border border-gray-900 bg-white group-hover:border-gray-800 xs:w-20"
         />
       ) : (
-        <div class="z-0 block aspect-square w-20 rounded-full border border-gray-900 bg-white group-hover:border-gray-800" />
+        <div class="z-0 block aspect-square w-16 rounded-full border border-gray-900 bg-white group-hover:border-gray-800 xs:w-20" />
       )
     }
     <div class="flex grow flex-col items-center justify-center text-center">
-      <span class="text-lg leading-tight tracking-wider">{title}</span>
+      <span class="text-base leading-tight tracking-wider xs:text-lg"
+        >{title}</span
+      >
     </div>
   </a>
 </li>
