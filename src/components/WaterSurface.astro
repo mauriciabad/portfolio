@@ -1,0 +1,110 @@
+---
+import { cn } from "../lib/cn"
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+
+const waves: {
+  speed: number
+  offset: number
+  height: number
+  direction: number
+}[] = [
+  {
+    speed: 0.66,
+    offset: 0.2,
+    height: 0.9,
+    direction: 1,
+  },
+  {
+    speed: 0.66,
+    offset: 0.65,
+    height: 0.8,
+    direction: 1,
+  },
+  {
+    speed: 0.33,
+    offset: 0.25,
+    height: 0.6,
+    direction: -1,
+  },
+  {
+    speed: 0.33,
+    offset: 0.75,
+    height: 0.5,
+    direction: -1,
+  },
+]
+---
+
+<div class={cn("bg-gray-700", className)}>
+  <div class="water-surface-animation">
+    {
+      waves.map((wave) => (
+        <div
+          class="wave"
+          style={{
+            "--speed": wave.speed,
+            "--offset": wave.offset,
+            "--height": wave.height,
+            "--direction": wave.direction,
+          }}
+        />
+      ))
+    }
+    <div class="wave"></div>
+  </div>
+</div>
+
+<style>
+  .water-surface-animation {
+    --wave-height: 48;
+    --wave-width: calc(var(--wave-height) * 10);
+
+    position: relative;
+    overflow: hidden;
+    height: calc(var(--wave-height) * 1px);
+    background-color: var(--bg-color);
+  }
+
+  .wave {
+    --speed: 1;
+    --offset: 0;
+    --height: 1;
+    --direction: -1;
+
+    opacity: 0.4;
+    position: absolute;
+    transform-origin: bottom left;
+    inset: calc(calc(1 - var(--height)) * 100%)
+      calc(-1 * var(--wave-width) * 1px) 0;
+    animation: 10s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+      calc(10s * var(--offset) * -1) infinite translate-left;
+    background-repeat: repeat-x;
+    background-size: calc(var(--wave-width) * 1px)
+      calc(var(--wave-height) * 1px);
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='1000' height='100' viewBox='0 0 1000 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1000 100V49.8642C1000 49.8642 888.925 99.9837 740.813 100H1000ZM740.668 100H0V49.8642C0 49.8642 250 -62.3303 500 49.8642C583.306 87.4538 666.612 99.9919 740.668 100Z' fill='%23101827'/%3E%3C/svg%3E%0A");
+  }
+
+  .wave:last-child {
+    --speed: 1;
+    --offset: 0;
+    --height: 1;
+    --direction: -1;
+
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+
+  @keyframes translate-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(var(--direction) * var(--wave-width) * 1px));
+    }
+  }
+</style>
