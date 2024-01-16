@@ -5,10 +5,10 @@ interface Props {
   class?: string
 }
 
-const { class: className } = Astro.props
+const { class: className, ...rest } = Astro.props
 ---
 
-<svg viewBox="0 0 100 40" class={cn("h-4", className)}>
+<svg viewBox="0 0 100 40" class={cn("h-4", className)} {...rest}>
   <path
     class="tail"
     fill-rule="evenodd"

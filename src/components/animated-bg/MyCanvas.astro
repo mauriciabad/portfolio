@@ -8,7 +8,7 @@ import SmallFish from "./SmallFish.astro"
   </div>
 </div>
 
-<style is:inline>
+<style>
   .wrapper {
     position: absolute;
     inset: 0;
@@ -17,23 +17,26 @@ import SmallFish from "./SmallFish.astro"
     transform-origin: 90% 50%;
     animation: small-fish-translate 10s linear infinite;
     position: absolute;
-    top: 0.25rem;
-    left: calc(50vw - 100px - 1.25rem);
-  }
-
-  @media (min-width: 640px) {
-    .small-fish {
-      top: 1.5rem;
-    }
-  }
-  @media (min-width: 768px) {
-    .small-fish {
-      top: 2.5rem;
-    }
+    top: 0.25em;
+    left: calc(50vw - 100px - 1.25em);
+    font-size: 0.8rem;
   }
 
   .small-fish > * {
     animation: small-fish-rotate 10s linear infinite;
+    height: 1em;
+  }
+
+  @media (min-width: 640px) {
+    .small-fish {
+      top: 1.5em;
+      font-size: 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .small-fish {
+      top: 2.5em;
+    }
   }
 
   @keyframes small-fish-translate {

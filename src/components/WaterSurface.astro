@@ -5,7 +5,7 @@ interface Props {
   class?: string
 }
 
-const { class: className } = Astro.props
+const { class: className, ...rest } = Astro.props
 
 const waves: {
   speed: number
@@ -40,7 +40,7 @@ const waves: {
 ]
 ---
 
-<div class={cn("bg-gray-700", className)}>
+<div class={cn("bg-gray-700", className)} {...rest}>
   <div class="water-surface-animation">
     {
       waves.map((wave) => (
