@@ -15,12 +15,13 @@ import SmallFish from "./SmallFish.astro"
     position: absolute;
     inset: 0;
   }
+</style>
+
+<style>
   .small-fish {
-    transform-origin: 90% 50%;
-    animation: small-fish-translate 10s linear infinite;
     position: absolute;
     top: 0.25em;
-    left: calc(50vw - 100px - 1.25em);
+    left: calc(50vw - 1.25em);
     font-size: 0.8rem;
     transform-style: flat;
     perspective: 1000px;
@@ -28,7 +29,8 @@ import SmallFish from "./SmallFish.astro"
   }
 
   .small-fish > * {
-    animation: small-fish-rotate 10s linear infinite;
+    animation: small-fish-rotate 10s cubic-bezier(0.53, 0.37, 0.44, 0.6)
+      infinite;
     height: 1em;
   }
 
@@ -44,33 +46,15 @@ import SmallFish from "./SmallFish.astro"
     }
   }
 
-  @keyframes small-fish-translate {
-    0% {
-      transform: translateX(0);
-    }
-
-    50% {
-      transform: translateX(200px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
   @keyframes small-fish-rotate {
     0% {
-      transform: rotateY(-90deg);
+      transform: rotateY(0deg) translateZ(6rem);
     }
-    5%,
-    45% {
-      transform: rotateY(0deg);
-    }
-    55%,
-    95% {
-      transform: rotateY(180deg);
+    50% {
+      transform: rotateY(180deg) translateZ(6rem);
     }
     100% {
-      transform: rotateY(270deg);
+      transform: rotateY(360deg) translateZ(6rem);
     }
   }
 </style>
