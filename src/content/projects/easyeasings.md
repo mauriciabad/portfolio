@@ -1,6 +1,6 @@
 ---
-title: Keyframes easings editor | Make non-cubic-bezier easings in CSS
-description: Make custom non cubic bezier easing functions using keyframes and animations with this online css code generator developer tool, like elastic and bounce easings
+title: Easy Easings | linear() easing generator & @keyframes editor
+description: Make custom non-cubic-bezier easing functions using the linear() easing function or @keyframes and animations with this online css code generator developer tool, like elastic and bounce easings.
 name: Easy Easings
 shortName: Easy Easings
 addShortcut: true
