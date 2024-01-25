@@ -6,5 +6,5 @@ shortName: Web Hero
 addShortcut: false
 url: https://mauriciabad.github.io/WebHero/
 sourceCode: https://github.com/mauriciabad/WebHero
-maskableIcon: /apps/wordspy/maskable-icon.png
+maskableIcon: /apps/webhero/maskable-icon.png
 ---
