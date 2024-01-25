@@ -7,10 +7,26 @@ interface Props {
 }
 
 const { projects } = Astro.props
+
+const { main: mainProjects, other: otherProjects } = projects.reduce(
+  (acc, project) => {
+    if (project.data.addShortcut) {
+      acc.main.push(project)
+    } else {
+      acc.other.push(project)
+    }
+
+    return acc
+  },
+  {
+    main: [] as CollectionEntry<"projects">[],
+    other: [] as CollectionEntry<"projects">[],
+  },
+)
 ---
 
 <h2
-  class="font-title mb-2 text-center text-3xl uppercase leading-none tracking-wide"
+  class="mb-2 text-center font-title text-3xl uppercase leading-none tracking-wide"
 >
   <span class="flex items-center justify-center gap-2">
     <span
@@ -26,15 +42,67 @@ const { projects } = Astro.props
   <span class="block text-base font-semibold text-gray-500">to my apps</span>
 </h2>
 <ul
-  class="xs:gap-4 flex flex-wrap justify-center gap-2 [&>*]:min-w-32 [&>*]:max-w-64 [&>*]:flex-1 [@media(width>=425px)]:[&>*]:min-w-48"
+  class="flex flex-wrap justify-center gap-2 xs:gap-4 [&>*]:min-w-32 [&>*]:max-w-64 [&>*]:flex-1 [@media(width>=425px)]:[&>*]:min-w-48"
 >
   {
-    projects.map((project) => (
+    mainProjects.map((project) => (
       <AppShortcut
         icon={project.data.maskableIcon}
         title={project.data.shortName}
         url={project.data.url}
+        data-type="main"
+      />
+    ))
+  }
+  {
+    otherProjects.map((project) => (
+      <AppShortcut
+        icon={project.data.maskableIcon}
+        title={project.data.shortName}
+        url={project.data.url}
+        data-type="extra"
       />
     ))
   }
 </ul>
+<div class="mt-4 flex justify-center">
+  <button
+    class="rounded-full border border-gray-500 px-4 py-2 tracking-wider text-gray-500"
+    id="extra-projects-button"
+  >
+    Show more
+  </button>
+</div>
+
+<script>
+  let showingAll = false
+
+  const elems = {
+    items: document.querySelectorAll('[data-type="extra"]'),
+    button: document.getElementById("extra-projects-button")!,
+  }
+
+  elems.button.addEventListener("click", () => {
+    showingAll = !showingAll
+
+    showOrHideExtraProjects(showingAll)
+  })
+
+  showOrHideExtraProjects(showingAll)
+
+  // ------------------------------
+
+  function showOrHideExtraProjects(show: boolean) {
+    if (show) {
+      elems.items.forEach((elem) => {
+        elem.classList.remove("hidden")
+      })
+      elems.button.textContent = "Show less"
+    } else {
+      elems.items.forEach((elem) => {
+        elem.classList.add("hidden")
+      })
+      elems.button.textContent = "Show more"
+    }
+  }
+</script>

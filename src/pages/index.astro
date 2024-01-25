@@ -5,9 +5,7 @@ import DivMaxWidth from "../layouts/DivMaxWidth.astro"
 import Layout from "../layouts/Layout.astro"
 import { getCollection } from "astro:content"
 
-const mainProjects = await getCollection("projects", ({ data }) => {
-  return data.addShortcut === true
-})
+const projects = await getCollection("projects")
 ---
 
 <Layout
@@ -16,7 +14,7 @@ const mainProjects = await getCollection("projects", ({ data }) => {
   <main class="p-4 pb-24">
     <DivMaxWidth>
       <section class="mt-1 sm:mt-8 md:mt-12">
-        <QuickAccessSection projects={mainProjects} />
+        <QuickAccessSection projects={projects} />
       </section>
 
       <section class="mt-8 sm:mt-16 md:mt-20 lg:mt-24">
