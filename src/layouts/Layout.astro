@@ -9,18 +9,24 @@ interface Props {
 }
 
 const { title } = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Personal website of Maurici Abad Gutierrez, a Software Engineer in Barcelona. It contains information about him, projects and blog posts." />
+    <meta
+      name="description"
+      content="Personal website of Maurici Abad Gutierrez, a Software Engineer in Barcelona. It contains information about him, projects and blog posts."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="theme-color" content="#374151" />
+    <link rel="canonical" href={canonicalURL} />
   </head>
   <body class="bg-gray-900 text-gray-200">
     <WaterSurface class="pt-4" />
