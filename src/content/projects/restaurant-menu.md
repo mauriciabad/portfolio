@@ -4,7 +4,7 @@ description: Simple website where restaurants and bars can give their menus to t
 name: Restaurant menu
 shortName: Restaurant menu
 addShortcut: false
-url: https://lacuina-carta.netlify.app/en/
+url: https://lacuina-carta.mauri.app/en/
 sourceCode: https://github.com/mauriciabad/digital-menu-lacuina
 maskableIcon: /apps/restaurant-menu/maskable-icon.png
 ---
